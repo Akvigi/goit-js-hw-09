@@ -54,7 +54,14 @@ flatpickr(inputTime, {
           dataDays.textContent = addLeadingZero(convertedTime.days);
           dataHours.textContent = addLeadingZero(convertedTime.hours);
           dataMinutes.textContent = addLeadingZero(convertedTime.minutes);
-          dataSeconds.textContent = addLeadingZero(convertedTime.seconds);
+        dataSeconds.textContent = addLeadingZero(convertedTime.seconds);
+         if (currentDate > selectedDates[0]) {
+          dataDays.textContent = "00";
+          dataHours.textContent = "00";
+          dataMinutes.textContent = "00";
+          dataSeconds.textContent = "00";
+          clearInterval(interval)
+        }
 }}, 1000));
 
     },
